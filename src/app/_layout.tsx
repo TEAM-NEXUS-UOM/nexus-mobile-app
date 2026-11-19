@@ -2,6 +2,7 @@ import { Stack } from "expo-router";
 import { ActivityIndicator,View } from "react-native";
 import { useFonts } from "expo-font";
 import "../../global.css"
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -36,11 +37,13 @@ export default function RootLayout() {
   }
 
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
     <Stack>
       <Stack.Screen name="(maintabs)" options={{ headerShown: false }} />
       {/* <Stack.Screen name="ActiveDeliveryDetails" options={{ headerShown: false }} />
       <Stack.Screen name="ActivePickupDetails" options={{ headerShown: false }} /> */}
       <Stack.Screen name="(supporttabs)" options={{ headerShown: false }} />
     </Stack>
+    </GestureHandlerRootView>
   );
 }
