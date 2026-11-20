@@ -1,4 +1,4 @@
-import { View, Text, Pressable,TouchableOpacity,FlatList,Image,TextInput,StyleSheet, } from 'react-native'
+import { View, Text, Pressable,TouchableOpacity,FlatList,Image,TextInput,StyleSheet } from 'react-native'
 import React, { useState,useRef,useMemo } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useRouter } from 'expo-router';
@@ -76,11 +76,14 @@ const ViewRoute = () => {
     </View>
   </Pressable>
 </View>
-<Pressable>
-    <View className="bg-[#2A44D4 ] rounded-[14px] p-4 m-2 items-center justify-center">
+<TouchableOpacity 
+onPress={()=>{
+  router.navigate("/(supporttabs)/DeliveryCheckList")
+}}>
+    <View className="bg-[#2A44D4] rounded-[14px] p-4 m-2 items-center justify-center">
     <Text className='font-Poppins-SemiBold text-xl text-white '>I've arrived at ABC Stores</Text>
     </View>
-  </Pressable>
+  </TouchableOpacity>
           
           <Text className='font-Poppins-Light text-md mt-3 text-base'>Next locations</Text>
           {data.map((item,index) => (
