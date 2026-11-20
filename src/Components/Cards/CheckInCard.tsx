@@ -17,7 +17,7 @@ const CheckInCard = () => {
   });
   return (
     <LinearGradient
-        style={{borderRadius:24,marginHorizontal:2}}       
+        style={{borderRadius:24,marginHorizontal:4}}       
         colors={['#2A44D4', '#2A44D4']}
         >
           <View className='flex-row m-2 p-4 items-center justify-between'>
