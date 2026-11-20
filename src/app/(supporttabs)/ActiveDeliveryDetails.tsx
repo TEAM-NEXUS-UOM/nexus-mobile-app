@@ -1,24 +1,28 @@
-
-import { View, Text, Pressable, TouchableOpacity, FlatList } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { useRouter, useLocalSearchParams } from 'expo-router'
-import MaterialIcons from '@expo/vector-icons/MaterialIcons'
-import * as Progress from 'react-native-progress'
-import ShopDetailsCard from '@/Components/Cards/ShopDetailsCard'
-import ReportIssue from '@/Components/Buttons/ReportIssue'
-import { LinearGradient } from 'expo-linear-gradient'
+import {
+  View,
+  Text,
+  Pressable,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter, useLocalSearchParams } from "expo-router";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import * as Progress from "react-native-progress";
+import ShopDetailsCard from "@/Components/Cards/ShopDetailsCard";
+import ReportIssue from "@/Components/Buttons/ReportIssue";
+import { LinearGradient } from "expo-linear-gradient";
 
 const ActiveDeliveryDetails = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   const { isActive } = useLocalSearchParams<{
-    type: string
-    isActive: string
-  }>()
+    type: string;
+    isActive: string;
+  }>();
 
-  
-  const list = [1, 2, 3, 4, 5]
+  const list = [1, 2, 3, 4, 5];
 
   const topComponent = (
     <>
@@ -29,7 +33,7 @@ const ActiveDeliveryDetails = () => {
           marginVertical: 20,
           padding: 12,
         }}
-        colors={['#2A44D4', '#2A44D4']}
+        colors={["#2A44D4", "#2A44D4"]}
       >
         {/* Delivery Summary */}
         <View className="flex-row justify-between items-center my-4">
@@ -52,11 +56,11 @@ const ActiveDeliveryDetails = () => {
               unfilledColor="#D1D5DB"
               borderWidth={0}
               showsText
-              formatText={() => '90%'}
+              formatText={() => "90%"}
               textStyle={{
-                fontFamily: 'Poppins-Medium',
+                fontFamily: "Poppins-Medium",
                 fontSize: 16,
-                color: '#ffffff',
+                color: "#ffffff",
               }}
               strokeCap="round"
             />
@@ -90,30 +94,26 @@ const ActiveDeliveryDetails = () => {
         <View className="flex-row justify-around gap-3">
           <TouchableOpacity
             className="flex-1 bg-white my-2 p-3 rounded-[14px]"
-            onPress={() => console.log('Call Driver')}
+            onPress={() => console.log("Call Driver")}
           >
-            <Text className="text-center font-Poppins-Medium">
-              Call Driver
-            </Text>
+            <Text className="text-center font-Poppins-Medium">Call Driver</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             className="flex-1 bg-white my-2 p-3 rounded-[14px]"
             onPress={() => router.navigate("/(supporttabs)/ViewRoute")}
           >
-            <Text className="text-center font-Poppins-Medium">
-              Open route
-            </Text>
+            <Text className="text-center font-Poppins-Medium">Open route</Text>
           </TouchableOpacity>
         </View>
 
         {/* Start Task / Report Issue */}
-        {isActive === '1' ? (
+        {isActive === "1" ? (
           <ReportIssue />
         ) : (
           <TouchableOpacity
             className="bg-white my-2 p-3 rounded-[14px]"
-            onPress={() => console.log('Start Task')}
+            onPress={() => console.log("Start Task")}
           >
             <Text className="text-center font-Poppins-Medium text-[#11692F]">
               Start Task
@@ -127,25 +127,20 @@ const ActiveDeliveryDetails = () => {
         Shop list and detail
       </Text>
     </>
-  )
+  );
 
   return (
-    <SafeAreaView
-      className="flex-1 p-4"
-      edges={['top', 'left', 'right']}
-    >
+    <SafeAreaView className="flex-1 p-4" edges={["top", "left", "right"]}>
       <View className="flex-row items-center justify-center relative my-4">
+        <Pressable
+          className="absolute left-0 bg-white p-2 rounded-full"
+          onPress={() => router.back()}
+        >
+          <MaterialIcons name="arrow-back" size={24} color="black" />
+        </Pressable>
 
-<Pressable
-    className="absolute left-0 bg-white p-2 rounded-full"
-    onPress={() => router.back()}
->
-    <MaterialIcons name="arrow-back" size={24} color="black" />
-</Pressable>
-
-<Text className="text-xl font-Poppins-Medium">Delivery Details</Text>
-
-</View>
+        <Text className="text-xl font-Poppins-Medium">Delivery Details</Text>
+      </View>
 
       {/* Shop List */}
       <FlatList
@@ -156,7 +151,7 @@ const ActiveDeliveryDetails = () => {
         renderItem={() => <ShopDetailsCard />}
       />
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default ActiveDeliveryDetails
+export default ActiveDeliveryDetails;

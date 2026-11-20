@@ -15,6 +15,7 @@ export default function RootLayout() {
       <Stack.Screen name="ActivePickupDetails" options={{ headerShown: false }} />
       <Stack.Screen name="ProductDetails" options={{ headerShown: false }} />
       <Stack.Screen name="ViewRoute" options={{ headerShown: false }} />
+      <Stack.Screen name="DeliveryCheckList" options={{ headerShown: false }} />
      
     </Stack>
   );
