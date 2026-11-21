@@ -7,7 +7,7 @@ const ProductDetailsCard = () => {
         setNumber(prev=>prev + n)
     }
   return (
-    <View className='flex-row bg-white p-4 my-2 items-center rounded-[10px] justify-between border-2 border-[#E3E6EB]'>
+    <View className='flex-row bg-white p-4 my-2 items-center rounded-[24px] justify-between border-2 border-[#E3E6EB]'>
         <View className='p-2 flex-1 items-center'>
         
     <Text className='font-Poppins-Medium '>

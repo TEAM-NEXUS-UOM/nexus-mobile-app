@@ -57,15 +57,15 @@ export default function Checklist() {
             {task.isAction ? (
               <Pressable
                 onPress={task.onAction}
-                className="ml-5 flex-row items-center self-start rounded-2xl bg-indigo-50 px-5 py-3"
+                className="ml-5 flex-row items-center self-start rounded-[14px]  border border-gray-200 p-3"
               >
-                <Text className="font-Poppins-SemiBold text-lg text-indigo-800">
+                <Text className="font-Poppins-Regular text-lg ">
                   {task.label}
                 </Text>
                 <Feather
                   name="arrow-right"
                   size={20}
-                  color="#3730a3"
+                  color="black"
                   style={{ marginLeft: 10 }}
                 />
               </Pressable>
@@ -73,7 +73,7 @@ export default function Checklist() {
               <Text
                 className={`ml-5 flex-1 text-lg ${
                   isActive
-                    ? 'font-Poppins-SemiBold text-gray-900'
+                    ? 'font-Poppins-Medium text-gray-900'
                     : 'font-Poppins-Light text-gray-500'
                 }`}
               >
