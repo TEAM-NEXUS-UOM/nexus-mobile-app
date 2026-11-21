@@ -34,7 +34,7 @@ const DeliveryCheckList = () => {
         <Text className="text-xl font-Poppins-Medium">ABC Stores</Text>
       </View>
       
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
       {/* Delivery Info */}
       <LinearGradient
         style={{

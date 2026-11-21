@@ -13,6 +13,7 @@ import * as Progress from "react-native-progress";
 import ReportIssue from "@/Components/Buttons/ReportIssue";
 import DocumentsCard from "@/Components/Cards/DocumentsCard";
 import { LinearGradient } from "expo-linear-gradient";
+import ReportIssue_v2 from "@/Components/Buttons/ReportIssue_v2";
 
 const ActiveDeliveryDetails = () => {
   const router = useRouter();
@@ -128,7 +129,7 @@ const ActiveDeliveryDetails = () => {
 
         {/* Start Task / Report Issue */}
         {isActive === "1" ? (
-          <ReportIssue />
+          <ReportIssue_v2 />
         ) : (
           <TouchableOpacity
             className="bg-white my-2 p-3 rounded-[14px]"

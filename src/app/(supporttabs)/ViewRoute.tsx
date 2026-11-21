@@ -88,7 +88,7 @@ onPress={()=>{
           <Text className='font-Poppins-Light text-md mt-3 text-base'>Next locations</Text>
           {data.map((item,index) => (
 
-        <View key={index} className='p-4 m-2 rounded-[14px] bg-[#EAEEFC] border-2 border-[#E3E6EB]'>
+        <View key={index} className='p-4 m-2 rounded-[24px] bg-[#F6F7F9] border-2 border-[#E3E6EB]'>
           <Text className='font-Poppins-Regular text-xl '>XYZ mart</Text>
           <View className="flex-row items-center mt-2">
             <EvilIcons name="location" size={20} color="black" />
