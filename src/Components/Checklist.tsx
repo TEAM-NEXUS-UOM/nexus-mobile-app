@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 type Task = {
   label: string;
@@ -18,6 +19,8 @@ const tasks: Task[] = [
 
 export default function Checklist() {
   const [checked, setChecked] = useState<boolean[]>(tasks.map(() => false));
+
+  const router = useRouter();
 
   const toggleTask = (index: number) =>
     setChecked(prev => prev.map((v, i) => (i === index ? !v : v)));
@@ -56,9 +59,15 @@ export default function Checklist() {
             {/* content */}
             {task.isAction ? (
               <Pressable
-                onPress={task.onAction}
-                className="ml-5 flex-row items-center self-start rounded-[14px]  border border-gray-200 p-3"
-              >
+              onPress={() => {
+                if (task.label === 'Record next order') {
+                  router.push('/(supporttabs)/RecordNextDetails');
+                } else if (task.label === 'Capture payment invoice') {
+                  router.push('/(supporttabs)/RecordNextDetails');
+                }
+              }}
+              className="ml-5 flex-row items-center self-start rounded-[14px] border border-gray-200 p-3"
+            >
                 <Text className="font-Poppins-Regular text-lg ">
                   {task.label}
                 </Text>

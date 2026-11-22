@@ -138,7 +138,7 @@ const DeliveryCheckList = () => {
           router.dismissAll();
         }}
       >
-        <View className="bg-[#15803D] rounded-[16px] p-4 m-2 items-center justify-center">
+        <View className="bg-[#15803D] rounded-[20px] p-4 m-2 items-center justify-center">
           <Text className="font-Poppins-SemiBold text-xl text-white ">
             Delivery Completed
           </Text>
