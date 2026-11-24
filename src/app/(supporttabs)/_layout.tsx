@@ -18,6 +18,8 @@ export default function RootLayout() {
       <Stack.Screen name="DeliveryCheckList" options={{ headerShown: false }} />
       <Stack.Screen name="RecordNextDetails" options={{ headerShown: false }} />
       <Stack.Screen name="PickupChecklist" options={{ headerShown: false }} />
+      <Stack.Screen name="ReportIssue" options={{ headerShown: false }} />
+      <Stack.Screen name="FileAComplaint" options={{ headerShown: false }} />
       
      
     </Stack>

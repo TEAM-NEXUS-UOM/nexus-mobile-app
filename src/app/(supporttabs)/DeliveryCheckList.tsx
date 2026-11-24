@@ -111,7 +111,7 @@ const DeliveryCheckList = () => {
 
             <TouchableOpacity
               className="flex-1 bg-[#EAEEFC] my-2 p-3 rounded-[14px]"
-              onPress={() => router.navigate("/(maintabs)/addnewshop")}
+              onPress={() => router.navigate("/(supporttabs)/FileAComplaint")}
             >
               <Text className="text-center font-Poppins-Medium">
                 File a complaint
