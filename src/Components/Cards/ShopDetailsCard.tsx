@@ -36,7 +36,7 @@ const ShopDetailsCard = () => {
       </View>
 
       <TouchableOpacity
-        className="bg-[#EAEEFC] my-2 p-4 rounded-[14px] w-full"
+        className="bg-[#EAEEFC] my-2 p-4 rounded-[24px] w-full"
         onPress={() => router.push('/ProductDetails')}
       >
         <Text className="text-center font-Poppins-Medium text-[#1F33AE]">

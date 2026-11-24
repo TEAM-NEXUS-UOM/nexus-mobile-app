@@ -23,7 +23,7 @@ const HistoryCard = ({type}:prop) => {
       
 
 
-      <TouchableOpacity className='bg-[#EAEEFC] my-4 p-2 rounded-[10px]'   onPress={() => {
+      <TouchableOpacity className='bg-[#EAEEFC] my-4 p-2 rounded-[24px]'   onPress={() => {
     if (type) {
       router.push({
         pathname: "/ActiveDeliveryDetails",

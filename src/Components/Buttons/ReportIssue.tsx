@@ -8,7 +8,7 @@ const ReportIssue = () => {
   const router = useRouter();
   return (
     <TouchableOpacity
-    className="flex-row items-center justify-center gap-2  mt-3 p-3 rounded-[14px] border border-gray-200"
+    className="flex-row items-center justify-center gap-2  mt-3 p-3 rounded-[24px] border border-gray-200"
     onPress={() => router.navigate("/(supporttabs)/ReportIssue")}
   >
     <Feather name="alert-circle" size={16} color="#DC2626" />

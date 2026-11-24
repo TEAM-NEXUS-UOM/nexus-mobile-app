@@ -59,7 +59,7 @@ const RecordNextDetails = () => {
                 router.back();
               }}
             >
-              <View className="bg-[#15803D] rounded-[14px] p-4 m-1 items-center justify-center">
+              <View className="bg-[#15803D] rounded-[24px] p-4 m-1 items-center justify-center">
                 <Text className="font-Poppins-SemiBold text-xl text-white ">
                  Order Complete
                 </Text>

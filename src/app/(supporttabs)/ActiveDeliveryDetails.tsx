@@ -94,14 +94,14 @@ const ActiveDeliveryDetails = () => {
         {/* Action Buttons */}
         <View className="flex-row justify-around gap-3">
           <TouchableOpacity
-            className="flex-1 bg-white my-2 p-3 rounded-[14px]"
+            className="flex-1 bg-white my-2 p-3 rounded-[24px]"
             onPress={() => console.log("Call Driver")}
           >
             <Text className="text-center font-Poppins-Medium">Call Driver</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-                                className="flex-1 bg-white my-2 p-3 rounded-[14px]"
+                                className="flex-1 bg-white my-2 p-3 rounded-[24px]"
                                 onPress={() => router.push({
                                   pathname: '/(supporttabs)/ViewRoute',
                                   params: {
@@ -118,7 +118,7 @@ const ActiveDeliveryDetails = () => {
           <ReportIssue_v2 />
         ) : (
           <TouchableOpacity
-            className="bg-white my-2 p-3 rounded-[14px]"
+            className="bg-white my-2 p-3 rounded-[24px]"
             onPress={() => console.log("Start Task")}
           >
             <Text className="text-center font-Poppins-Medium text-[#11692F]">

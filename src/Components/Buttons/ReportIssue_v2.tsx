@@ -9,7 +9,7 @@ const ReportIssue_v2 = () => {
   const router = useRouter();
   return (
     <TouchableOpacity
-    className="flex-row items-center justify-center gap-2 bg-[white] my-2 p-3 rounded-[14px]"
+    className="flex-row items-center justify-center gap-2 bg-[white] my-2 p-3 rounded-[24px]"
     onPress={() => router.navigate("/(supporttabs)/ReportIssue")}
   >
     {/* <Feather name="alert-triangle" size={16} color="#B91C1C" /> */}

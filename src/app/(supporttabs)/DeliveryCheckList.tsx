@@ -101,7 +101,7 @@ const DeliveryCheckList = () => {
 
           <View className="flex-row justify-around gap-3">
             <TouchableOpacity
-              className="flex-1 bg-[#EAEEFC] my-2 p-3 rounded-[14px]"
+              className="flex-1 bg-[#EAEEFC] my-2 p-3 rounded-[24px]"
               onPress={() => router.navigate("/(supporttabs)/ProductDetails")}
             >
               <Text className="text-center font-Poppins-Medium">
@@ -110,7 +110,7 @@ const DeliveryCheckList = () => {
             </TouchableOpacity>
 
             <TouchableOpacity
-              className="flex-1 bg-[#EAEEFC] my-2 p-3 rounded-[14px]"
+              className="flex-1 bg-[#EAEEFC] my-2 p-3 rounded-[24px]"
               onPress={() => router.navigate("/(supporttabs)/FileAComplaint")}
             >
               <Text className="text-center font-Poppins-Medium">
@@ -134,7 +134,7 @@ const DeliveryCheckList = () => {
             router.dismissAll();
           }}
         >
-          <View className="bg-[#15803D] rounded-[20px] p-4 m-2 items-center justify-center">
+          <View className="bg-[#15803D] rounded-[24px] p-4 m-2 items-center justify-center">
             <Text className="font-Poppins-SemiBold text-xl text-white ">
               Delivery Completed
             </Text>
