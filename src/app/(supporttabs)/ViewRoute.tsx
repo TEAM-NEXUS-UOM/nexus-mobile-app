@@ -84,7 +84,7 @@ onPress={()=>{
 else if (type==="delivery")
   router.navigate("/(supporttabs)/DeliveryCheckList")
 }}>
-    <View className="bg-[#2A44D4] rounded-[14px] p-4 m-2 items-center justify-center">
+    <View className="bg-[#2A44D4] rounded-[24px] p-4 m-2 items-center justify-center">
     <Text className='font-Poppins-SemiBold text-xl text-white '>I've arrived at ABC Stores</Text>
     </View>
   </TouchableOpacity>

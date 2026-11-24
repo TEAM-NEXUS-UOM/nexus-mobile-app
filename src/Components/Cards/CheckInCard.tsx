@@ -58,7 +58,7 @@ const CheckInCard = () => {
               <Text className='font-Poppins-Medium text-white text-xl'>Not yet</Text>
             </View>
           </View>
-          <TouchableOpacity className="bg-[white] my-4 p-4 rounded-[14px]" onPress={checkCheckedIn}>
+          <TouchableOpacity className="bg-[white] my-4 p-4 rounded-[24px]" onPress={checkCheckedIn}>
               <Text className={`${isCheckedIn?"text-[#34C759]":"text-[#FF383C]"} text-center text-xl font-Poppins-SemiBold`}>{isCheckedIn?"Check-In":"Check-Out"}</Text>
             </TouchableOpacity>
           </View>
