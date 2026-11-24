@@ -16,7 +16,7 @@ if (hour < 12) {
   greeting = "Good Evening";
 }
   return (
-    <View className='flex-row justify-between items-center mt-2 mb-4 mx-2'>
+    <View className='flex-row justify-between items-center mt-2 mb-4 mx-2 rounded-b-[15px]'>
       <View>
       <Text className='font-Poppins-Light font-bold text-md'>
          {greeting}

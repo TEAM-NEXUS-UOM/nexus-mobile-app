@@ -1,7 +1,7 @@
 import { View, Text, Pressable,TouchableOpacity,FlatList,Image,TextInput,StyleSheet } from 'react-native'
 import React, { useState,useRef,useMemo } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { useRouter } from 'expo-router';
+import { useRouter,useLocalSearchParams } from 'expo-router';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 import MapView from 'react-native-maps';
@@ -13,6 +13,7 @@ import EvilIcons from '@expo/vector-icons/EvilIcons'
 const ViewRoute = () => {
   const router = useRouter()
   const bottomSheetRef = useRef<BottomSheet>(null);
+  const { type } = useLocalSearchParams();
 
   const snapPoints = useMemo(() => ['15%', '50%', '90%'], []);
   const data = [1,2,3,4,5,6,7]
@@ -78,6 +79,9 @@ const ViewRoute = () => {
 </View>
 <TouchableOpacity 
 onPress={()=>{
+  if(type==="pickup")
+  router.navigate("/(supporttabs)/PickupChecklist")
+else if (type==="delivery")
   router.navigate("/(supporttabs)/DeliveryCheckList")
 }}>
     <View className="bg-[#2A44D4] rounded-[14px] p-4 m-2 items-center justify-center">
