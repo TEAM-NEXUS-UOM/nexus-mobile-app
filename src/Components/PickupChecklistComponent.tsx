@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { Feather } from '@expo/vector-icons';
@@ -5,19 +6,19 @@ import { useRouter } from 'expo-router';
 
 type Task = {
   label: string;
-  isAction?: boolean;       // renders as a pill button
+  isAction?: boolean;
   onAction?: () => void;
 };
 
 const tasks: Task[] = [
-  { label: 'Confirm the retail shop and delivery order' },
-  { label: 'Verify products and quantities against the order' },
-  { label: 'Inspect products for damage or missing items' },
-  { label: 'Record next order', isAction: true },
-  { label: 'Capture payment invoice', isAction: true },
+  { label: 'Check product names and quantities against the shipment manifest' },
+  { label: 'Inspect products and packaging for visible damage.' },
+  { label: 'Confirm all assigned goods have been loaded securely.' },
+  { label: 'Order Dispatch sign from supervisor', isAction: true },
+  { label: 'Capture Photo Evidence', isAction: true },
 ];
 
-export default function Checklist() {
+export default function PickupChecklistComponent() {
   const [checked, setChecked] = useState<boolean[]>(tasks.map(() => false));
 
   const router = useRouter();
@@ -25,16 +26,14 @@ export default function Checklist() {
   const toggleTask = (index: number) =>
     setChecked(prev => prev.map((v, i) => (i === index ? !v : v)));
 
-  // first unchecked item is the "current" step (dark + bold)
   const activeIndex = checked.findIndex(c => !c);
 
   return (
     <View className="mx-1 my-5 rounded-[24px] border border-[#E3E6EB] bg-white px-8 py-6">
-      {/* vertical connector line, centered behind the 32px boxes */}
       <View
         pointerEvents="none"
         className="absolute bg-gray-200"
-        style={{ left: 32 + 10, top: 45, bottom: 40, width: 2 }}
+        style={{ left: 32 + 10, top: 55, bottom: 40, width: 2 }}
       />
 
       {tasks.map((task, index) => {
@@ -43,7 +42,6 @@ export default function Checklist() {
 
         return (
           <View key={index} className="flex-row items-center py-3">
-            {/* checkbox */}
             <Pressable
               onPress={() => toggleTask(index)}
               hitSlop={8}
@@ -56,21 +54,21 @@ export default function Checklist() {
               {isChecked && <Feather name="check" size={18} color="white" />}
             </Pressable>
 
-            {/* content */}
             {task.isAction ? (
               <Pressable
-              onPress={() => {
-                if (task.label === 'Record next order') {
-                  router.push('/(supporttabs)/RecordNextDetails');
-                } else if (task.label === 'Capture payment invoice') {
-                  router.push('/(supporttabs)/RecordNextDetails');
-                }
-              }}
-              className="ml-5 flex-row items-center self-start rounded-[14px] border border-gray-200 p-3"
-            >
-                <Text className="font-Poppins-Regular text-lg ">
+                onPress={() => {
+                  if (task.label === 'Record next order') {
+                    router.push('/(supporttabs)/RecordNextDetails');
+                  } else if (task.label === 'Capture payment invoice') {
+                    router.push('/(supporttabs)/RecordNextDetails');
+                  }
+                }}
+                className="ml-5 flex-1 flex-row items-center self-start rounded-[14px] border border-gray-200 p-3"
+              >
+                <Text className="flex-1 shrink font-Poppins-Medium">
                   {task.label}
                 </Text>
+
                 <Feather
                   name="arrow-right"
                   size={20}

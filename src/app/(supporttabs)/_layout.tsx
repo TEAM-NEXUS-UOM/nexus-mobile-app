@@ -17,6 +17,7 @@ export default function RootLayout() {
       <Stack.Screen name="ViewRoute" options={{ headerShown: false }} />
       <Stack.Screen name="DeliveryCheckList" options={{ headerShown: false }} />
       <Stack.Screen name="RecordNextDetails" options={{ headerShown: false }} />
+      <Stack.Screen name="PickupChecklist" options={{ headerShown: false }} />
       
      
     </Stack>

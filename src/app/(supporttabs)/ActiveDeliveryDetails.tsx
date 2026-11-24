@@ -101,11 +101,16 @@ const ActiveDeliveryDetails = () => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            className="flex-1 bg-white my-2 p-3 rounded-[14px]"
-            onPress={() => router.navigate("/(supporttabs)/ViewRoute")}
-          >
-            <Text className="text-center font-Poppins-Medium">Open route</Text>
-          </TouchableOpacity>
+                                className="flex-1 bg-white my-2 p-3 rounded-[14px]"
+                                onPress={() => router.push({
+                                  pathname: '/(supporttabs)/ViewRoute',
+                                  params: {
+                                    type:"delivery",
+                                  },
+                                })}
+                              >
+                                <Text className="text-center font-Poppins-Medium">Open route</Text>
+                              </TouchableOpacity>
         </View>
 
         {/* Start Task / Report Issue */}
