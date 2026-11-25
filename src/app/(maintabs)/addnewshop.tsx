@@ -13,6 +13,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
+import DropdownComponent from "@/Components/Dropdownlist";
 
 const AddNewShop = () => {
   return (
@@ -80,6 +81,11 @@ const AddNewShop = () => {
             </View>
 
             <Text className="px-2 font-Poppins-Medium text-lg mt-4">
+              Type of the shop
+            </Text>
+            <DropdownComponent/>
+
+            <Text className="px-2 font-Poppins-Medium text-lg mt-4">
               Special requests
             </Text>
             <View className="flex-row bg-white p-4 rounded-[14px] my-2 border-2 border-[#E3E6EB] items-start">
@@ -99,6 +105,8 @@ const AddNewShop = () => {
                 placeholder="Type here"
               />
             </View>
+
+            
 
           </View>
         </ScrollView>
