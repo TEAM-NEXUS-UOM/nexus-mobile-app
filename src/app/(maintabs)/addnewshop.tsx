@@ -17,7 +17,7 @@ import DropdownComponent from "@/Components/Dropdownlist";
 
 const AddNewShop = () => {
   return (
-    <SafeAreaView className="flex-1 p-2 pb-0" edges={["top", "left", "right"]}>
+    <SafeAreaView className="flex-1 px-2 pb-0" edges={["top", "left", "right"]}>
       <KeyboardAvoidingView
         className="flex-1"
         behavior={Platform.OS === "ios" ? "padding" : "height"}

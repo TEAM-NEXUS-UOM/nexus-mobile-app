@@ -1,10 +1,27 @@
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Entypo from '@expo/vector-icons/Entypo';
 import { Tabs } from 'expo-router';
+import { Easing } from 'react-native';
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: '#1F41BB', headerShown: false, tabBarInactiveTintColor: "black", headerTitleStyle: { fontFamily: "Poppins-Regular", } }}>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: '#1F41BB',
+        headerShown: false,
+        tabBarInactiveTintColor: 'black',
+        headerTitleStyle: { fontFamily: 'Poppins-Regular' },
+        animation: 'shift',
+        lazy: false,
+        transitionSpec: {
+          animation: 'timing',
+          config: {
+            duration: 220,
+            easing: Easing.inOut(Easing.ease),
+          },
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
 

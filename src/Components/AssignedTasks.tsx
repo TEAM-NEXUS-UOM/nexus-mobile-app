@@ -8,6 +8,7 @@ const AssignedTasks = () => {
     <Text className='m-2 font-Poppins-Medium text-xl'>Tasks assigned for today</Text>
     <AssignedTaskCard type={1}/>
     <AssignedTaskCard type={0}/>
+    <AssignedTaskCard type={0}/>
     
 
 
