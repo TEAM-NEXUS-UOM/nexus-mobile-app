@@ -1,33 +1,86 @@
-import AssignedTasks from '@/Components/AssignedTasks'
-import CheckInCard from '@/Components/Cards/CheckInCard'
-import Header from '@/Components/Header'
-import OngoingTask from '@/Components/OngoingTask'
-import { ScrollView, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
 
-const index = () => {
+import {
+  View,
+} from 'react-native';
 
+import { useMemo, useRef } from 'react';
+
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { useLocalSearchParams, useRouter } from 'expo-router';
+
+import BottomSheet, {
+  BottomSheetScrollView,
+} from '@gorhom/bottom-sheet';
+
+import AssignedTasks from '@/Components/AssignedTasks';
+import CheckInCard3 from '@/Components/CheckInCard_V3';
+import CheckInCard4 from '@/Components/CheckInCard_V4';
+import Header2 from '@/Components/Header_V2';
+import OngoingTask from '@/Components/OngoingTask';
+
+
+const settings = () => {
+
+  const router = useRouter();
+
+  const bottomSheetRef = useRef<BottomSheet>(null);
+
+  const { type } = useLocalSearchParams();
+
+  const snapPoints = useMemo(() => ['60%', '80%'], []);
 
   return (
-    <SafeAreaView className='flex-1 p-2 pb-0' edges={['top', 'left', 'right']}>
-      <Header />
+    <View className="flex-1 bg-[#2A44D4] ">
 
-      <View className='flex-1 relative'>
-        <ScrollView
-          className='flex-1'
+      {/* Header Section */}
+      <SafeAreaView
+        className="px-4 bg-[#2A44D4]"
+        edges={['top', 'left', 'right']}
+        pointerEvents="box-none"
+      >
+        <Header2 />
+        <CheckInCard4 />
+      </SafeAreaView>
+
+
+      {/* Bottom Sheet */}
+      <BottomSheet
+        ref={bottomSheetRef}
+        snapPoints={snapPoints}
+        index={0}
+        enableDynamicSizing={false}
+        enablePanDownToClose={false}
+        backgroundStyle={{
+          backgroundColor: '#F6F7F9',
+        }}
+        onChange={(index) => {
+          console.log('onChange', index);
+        }}
+      >
+
+        {/* Scrollable Content */}
+        <BottomSheetScrollView
+          style={{ flex: 1 }}
+          contentContainerStyle={{
+            padding: 10,
+            paddingBottom: 50,
+          }}
           showsVerticalScrollIndicator={false}
-
         >
-          <CheckInCard />
+
+          <CheckInCard3 />
+
           <OngoingTask />
+
           <AssignedTasks />
-        </ScrollView>
 
+        </BottomSheetScrollView>
 
-      </View>
-    </SafeAreaView>
-  )
-}
+      </BottomSheet>
 
-export default index
+    </View>
+  );
+};
 
+export default settings;

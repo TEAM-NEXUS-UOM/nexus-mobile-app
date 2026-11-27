@@ -173,7 +173,7 @@ const ActiveDeliveryDetails = () => {
             onPress={()=>{ alert("Reported")
             }}>
                 <View className="bg-[#2A44D4] rounded-[24px] p-4 m-2 items-center justify-center">
-                <Text className='font-Poppins-SemiBold text-xl text-white '>I've arrived at ABC Stores</Text>
+                <Text className='font-Poppins-SemiBold text-xl text-white '>Report Issue</Text>
                 </View>
               </TouchableOpacity>
               

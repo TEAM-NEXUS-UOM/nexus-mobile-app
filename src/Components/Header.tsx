@@ -1,7 +1,7 @@
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { Text, View } from 'react-native';
 
-const Header = () => {
+const  Header = () => {
   const today = new Date();
 
 const hour = today.getHours();
@@ -16,12 +16,12 @@ if (hour < 12) {
   greeting = "Good Evening";
 }
   return (
-    <View className='flex-row justify-between items-center mt-2 mb-4 mx-2 rounded-b-[15px]'>
+    <View className='flex-row justify-between items-center m-2 p-3 rounded-[15px] '>
       <View>
-      <Text className='font-Poppins-Light font-bold text-md'>
+      <Text className='font-Poppins-Regular font-bold text-md'>
          {greeting}
         </Text>
-        <Text className='font-Poppins-Regular font-bold text-2xl'>
+        <Text className='font-Poppins-Medium font-bold text-2xl'>
           Hello Eranjana
         </Text>
       </View>
