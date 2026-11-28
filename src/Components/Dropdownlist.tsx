@@ -3,14 +3,24 @@ import React, { useState } from 'react';
   import { Dropdown } from 'react-native-element-dropdown';
   import AntDesign from '@expo/vector-icons/AntDesign';
 
-  const data = [
+  const data1 = [
     { label: 'Super Market', value: '1' },
     { label: 'Small Shop', value: '2' },
     { label: 'Sathosa', value: '3' },
     
   ];
+  const data2 = [
+    { label: 'Product defect', value: '1' },
+    { label: 'Product return', value: '2' },
+    { label: 'Payment issue', value: '3' },
+    
+  ];
 
-  const Dropdownlist = () => {
+interface prop{
+  type:number
+}
+
+  const Dropdownlist = ({type}:prop) => {
     const [value, setValue] = useState(null);
 
     return (
@@ -20,7 +30,7 @@ import React, { useState } from 'react';
         selectedTextStyle={styles.selectedTextStyle}
         inputSearchStyle={styles.inputSearchStyle}
         iconStyle={styles.iconStyle}
-        data={data}
+        data={type?data1:data2}
         
         maxHeight={300}
         labelField="label"

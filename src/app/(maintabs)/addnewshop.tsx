@@ -83,7 +83,7 @@ const AddNewShop = () => {
             <Text className="px-2 font-Poppins-Medium text-lg mt-4">
               Type of the shop
             </Text>
-            <DropdownComponent/>
+            <DropdownComponent type={1}/>
 
             <Text className="px-2 font-Poppins-Medium text-lg mt-4">
               Special requests

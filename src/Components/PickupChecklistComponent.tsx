@@ -14,7 +14,7 @@ const tasks: Task[] = [
   { label: 'Check product names and quantities against the shipment manifest' },
   { label: 'Inspect products and packaging for visible damage.' },
   { label: 'Confirm all assigned goods have been loaded securely.' },
-  { label: 'Order Dispatch sign from supervisor', isAction: true },
+  { label: 'sign from supervisor', isAction: true },
   { label: 'Capture Photo Evidence', isAction: true },
 ];
 
@@ -45,7 +45,7 @@ export default function PickupChecklistComponent() {
             <Pressable
               onPress={() => toggleTask(index)}
               hitSlop={8}
-              className={`h-8 w-8 items-center justify-center rounded-lg border-2 ${
+              className={`h-8 w-8 items-center justify-center rounded-[24px] border-2 ${
                 isChecked
                   ? 'border-green-700 bg-green-700'
                   : 'border-gray-300 bg-white'
@@ -63,7 +63,7 @@ export default function PickupChecklistComponent() {
                     router.push('/(supporttabs)/RecordNextDetails');
                   }
                 }}
-                className="ml-5 flex-1 flex-row items-center self-start rounded-[14px] border border-gray-200 p-3"
+                className="ml-5 flex-1 flex-row items-center self-start rounded-[24px] border border-gray-200 p-3"
               >
                 <Text className="flex-1 shrink font-Poppins-Medium">
                   {task.label}
