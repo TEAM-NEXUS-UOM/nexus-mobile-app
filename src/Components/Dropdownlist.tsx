@@ -41,10 +41,7 @@ interface prop{
         onChange={item => {
           setValue(item.value);
         }}
-        renderLeftIcon={() => (
-            <AntDesign name="shopping-cart" size={20} color="gray" 
-            style={{ marginRight: 12 }}/>
-        )}
+        
       />
     );
   };
