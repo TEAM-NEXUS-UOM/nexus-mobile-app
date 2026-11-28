@@ -47,7 +47,7 @@ export default function DeliveryChecklistComponent() {
             <Pressable
               onPress={() => toggleTask(index)}
               hitSlop={8}
-              className={`h-8 w-8 items-center justify-center rounded-lg border-2 ${
+              className={`h-8 w-8 items-center justify-center rounded-[24px] border-2 ${
                 isChecked
                   ? 'border-green-700 bg-green-700'
                   : 'border-gray-300 bg-white'
@@ -66,7 +66,7 @@ export default function DeliveryChecklistComponent() {
                   router.push('/(supporttabs)/RecordNextDetails');
                 }
               }}
-              className="ml-5 flex-row items-center self-start rounded-[14px] border border-gray-200 p-3"
+              className="ml-5 flex-row items-center self-start rounded-[24px] border border-gray-200 p-3"
             >
                 <Text className="font-Poppins-Regular text-lg ">
                   {task.label}
