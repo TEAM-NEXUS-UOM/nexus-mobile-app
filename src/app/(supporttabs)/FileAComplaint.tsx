@@ -6,7 +6,7 @@ import {
   Platform,
   ScrollView,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter, useLocalSearchParams } from "expo-router";
@@ -14,6 +14,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
 import DropdownComponent from "@/Components/Dropdownlist";
+import ImagePickerExample from "@/Components/ImagePicker";
 
 const ActiveDeliveryDetails = () => {
   const router = useRouter();
@@ -39,7 +40,7 @@ const ActiveDeliveryDetails = () => {
             <MaterialIcons name="arrow-back" size={24} color="black" />
           </Pressable>
 
-          <Text className="text-xl font-Poppins-Medium">Delivery Details</Text>
+          <Text className="text-xl font-Poppins-Medium">ABC Store</Text>
         </View>
 
         <ScrollView
@@ -47,12 +48,17 @@ const ActiveDeliveryDetails = () => {
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
         >
-          <View className="m-2 my-4 p-2">
-            <Text className="px-2 font-Poppins-Medium text-lg">
-              Name of the shop
+          <View className="m-2 p-2">
+            <Text className="px-2 font-Poppins-Medium text-lg mt-4">
+              Type of the complaint
             </Text>
-            <View className="flex-row bg-white p-4 rounded-[14px] my-2 border-2 border-[#E3E6EB] items-center">
-              <AntDesign name="shop" size={20} color="gray" />
+            <DropdownComponent type={0} />
+
+            <Text className="px-2 font-Poppins-Medium text-lg mt-4">
+              Complant (in brief)
+            </Text>
+            <View className="flex-row bg-white p-4 rounded-[14px] mt-2 border-2 border-[#E3E6EB] items-center">
+              
               <TextInput
                 className="flex-1 ml-2 font-Poppins-Medium"
                 placeholderTextColor="gray"
@@ -61,49 +67,7 @@ const ActiveDeliveryDetails = () => {
             </View>
 
             <Text className="px-2 font-Poppins-Medium text-lg mt-4">
-              Shop owner name
-            </Text>
-            <View className="flex-row bg-white p-4 rounded-[14px] my-2 border-2 border-[#E3E6EB] items-center">
-              <AntDesign name="user" size={20} color="gray" />
-              <TextInput
-                className="flex-1 ml-2 font-Poppins-Medium"
-                placeholderTextColor="gray"
-                placeholder="Type here"
-              />
-            </View>
-
-            <Text className="px-2 font-Poppins-Medium text-lg mt-4">
-              Contact Number
-            </Text>
-            <View className="flex-row bg-white p-4 rounded-[14px] my-2 border-2 border-[#E3E6EB] items-center">
-              <Feather name="phone" size={20} color="gray" />
-              <TextInput
-                className="flex-1 ml-2 font-Poppins-Medium"
-                placeholderTextColor="gray"
-                placeholder="Type here"
-                keyboardType="phone-pad"
-              />
-            </View>
-
-            <Text className="px-2 font-Poppins-Medium text-lg mt-4">
-              Location
-            </Text>
-            <View className="flex-row bg-white p-4 rounded-[14px] my-2 border-2 border-[#E3E6EB] items-center">
-              <AntDesign name="environment" size={20} color="gray" />
-              <TextInput
-                className="flex-1 ml-2 font-Poppins-Medium"
-                placeholderTextColor="gray"
-                placeholder="Type here"
-              />
-            </View>
-
-            <Text className="px-2 font-Poppins-Medium text-lg mt-4">
-              Type of the shop
-            </Text>
-            <DropdownComponent />
-
-            <Text className="px-2 font-Poppins-Medium text-lg mt-4">
-              Special requests
+              Additional Comments
             </Text>
             <View className="flex-row bg-white p-4 rounded-[14px] my-2 border-2 border-[#E3E6EB] items-start">
               <Feather
@@ -122,6 +86,15 @@ const ActiveDeliveryDetails = () => {
                 placeholder="Type here"
               />
             </View>
+
+
+
+            <Text className="px-2 font-Poppins-Medium text-lg mt-2">
+              Upload photos or documents 
+            </Text>
+            <ImagePickerExample/>
+
+
           </View>
         </ScrollView>
         <TouchableOpacity
